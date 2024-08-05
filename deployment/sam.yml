@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  DynamodbStreamConsumer:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ../target/new-relic-layer-test-1.0-SNAPSHOT.jar
+      Environment:
+        Variables:
+          NEW_RELIC_LICENSE_KEY: 12345
+          NEW_RELIC_ACCOUNT_ID: 12345
+          NEW_RELIC_LAMBDA_HANDLER: org.example.DynamoDbStreamHandler::handleRequest
+          NEW_RELIC_EXTENSION_SEND_FUNCTION_LOGS: true
+      Layers:
+#        - arn:aws:lambda:ap-southeast-2:451483290750:layer:NewRelicJava8:27
+        - arn:aws:lambda:ap-southeast-2:451483290750:layer:NewRelicJava11:18
+#      Handler: org.example.DynamoDbStreamHandler::handleRequest
+      Handler: com.newrelic.java.HandlerWrapper::handleRequest
+#      Runtime: java8.al2
+      Runtime: java11
+      MemorySize: 512

@@ -1,0 +1,46 @@
+{
+  "Records": [
+    {
+      "eventID": "12345",
+      "eventName": "MODIFY",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "ap-southeast-2",
+      "dynamodb": {
+        "ApproximateCreationDateTime": 1479499740,
+        "Keys": {
+          "Timestamp": {
+            "S": "2016-11-18T12:09:36.000Z"
+          },
+          "Username": {
+            "S": "John Black"
+          }
+        },
+        "NewImage": {
+          "providerID": {
+            "S": "12345"
+          },
+          "uploadID": {
+            "S": "12345"
+          },
+          "providerUploadStatus": {
+            "S": "done"
+          },
+          "createdAt": {
+            "S": "2019-08-23T06:26:57.659437522Z"
+          },
+          "effectiveFrom": {
+            "S": "2019-08-23T06:26:57Z"
+          },
+          "effectiveTo": {
+            "S": "2025-01-31T06:26:57Z"
+          }
+        },
+        "SequenceNumber": "12345",
+        "SizeBytes": 112,
+        "StreamViewType": "NEW_IMAGE"
+      },
+      "eventSourceARN": "Not a Valid ARN"
+    }
+  ]
+}
